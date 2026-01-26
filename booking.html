@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Website Booking Form</h2>
+
+<form onsubmit="sendWhatsApp()">
+
+<input type="text" id="shop" placeholder="Shop Name" required><br>
+<input type="text" id="owner" placeholder="Owner Name" required><br>
+<input type="tel" id="mobile" placeholder="Mobile Number" required><br>
+<input type="text" id="city" placeholder="City" required><br>
+
+<select id="type">
+  <option>Basic Website</option>
+  <option>Premium Website</option>
+</select><br><br>
+
+<textarea id="msg" placeholder="Your Requirement"></textarea><br><br>
+
+<button type="submit">Submit & Continue</button>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
