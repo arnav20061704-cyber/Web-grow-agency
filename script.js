@@ -1,19 +1,28 @@
-function sendWhatsApp() {
+<script>
+function sendDetails(event) {
   event.preventDefault();
 
-  let shop = document.getElementById("shop").value;
-  let owner = document.getElementById("owner").value;
-  let mobile = document.getElementById("mobile").value;
-  let city = document.getElementById("city").value;
-  let type = document.getElementById("type").value;
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+  let plan = document.getElementById("plan").value;
 
-  let message = `New Website Booking:%0A
-Shop: ${shop}%0A
-Owner: ${owner}%0A
-Mobile: ${mobile}%0A
-City: ${city}%0A
-Website: ${type}`;
+  let message = 
+    "Website Booking Details%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Email: " + email + "%0A" +
+    "Selected Plan: " + plan;
 
-  window.location.href =
-   "https://wa.me/916306470595?text=" + message;
+  // Gmail
+  window.open(
+    "mailto:arnav20061704@gmail.com?subject=Website Booking&body=" + message
+  );
 
+  // WhatsApp
+  window.open(
+    "https://wa.me/91" + phone + "?text=" + message,
+    "_blank"
+  );
+}
+</script>
