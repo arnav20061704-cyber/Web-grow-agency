@@ -33,8 +33,6 @@ body {
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  90% { opacity: 1; }
   100% { opacity: 0; visibility: hidden; }
 }
 
@@ -64,7 +62,6 @@ body {
 }
 
 @keyframes blink {
-  0%,100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
@@ -89,13 +86,11 @@ body {
   background: linear-gradient(to right, #00f260, #0575e6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 25px rgba(0,242,96,0.6);
 }
 
 .hero-subtitle {
   margin: 20px 0 40px;
   font-size: 1.2rem;
-  opacity: 0.95;
 }
 
 /* ===== BUTTON ===== */
@@ -149,21 +144,25 @@ button:hover {
   overflow: hidden;
 }
 
+/* 🔥 FIX: overlay click block hata diya */
 .card::before {
   content: "";
   position: absolute;
   inset: -60%;
   background: radial-gradient(circle, rgba(0,242,96,0.18), transparent 65%);
   transform: rotate(30deg);
+  pointer-events: none;   /* ✅ IMPORTANT */
 }
 
+/* Hover */
 .card:hover {
-  transform: translateY(-22px) scale(1.08);
+  transform: translateY(-18px) scale(1.06);
   box-shadow:
-    0 45px 110px rgba(0,242,96,0.35),
+    0 40px 100px rgba(0,242,96,0.35),
     0 0 70px rgba(5,117,230,0.45);
 }
 
+/* Headings */
 .card h3, .card h4, .card h5 {
   font-size: 1.8rem;
   text-align: center;
@@ -173,6 +172,7 @@ button:hover {
   -webkit-text-fill-color: transparent;
 }
 
+/* Price */
 .card strong {
   font-size: 1.6rem;
   color: #00f260;
@@ -183,6 +183,7 @@ button:hover {
   margin-right: 6px;
 }
 
+/* List */
 .card ul {
   list-style: none;
   margin: 25px 0;
@@ -191,6 +192,13 @@ button:hover {
 .card ul li {
   margin: 10px 0;
   font-size: 0.95rem;
+}
+
+/* ✅ Button clickable fix */
+.card a,
+.card button {
+  position: relative;
+  z-index: 2;
 }
 
 /* ===== FEATURED ===== */
@@ -211,9 +219,10 @@ button:hover {
   transform: rotate(45deg);
   font-size: 0.75rem;
   font-weight: 700;
+  pointer-events: none;
 }
 
-/* ===== FORMS (BOOKING) ===== */
+/* ===== FORMS ===== */
 form {
   max-width: 420px;
   margin: 80px auto;
@@ -229,10 +238,9 @@ input, select, textarea {
   margin: 10px 0;
   border-radius: 10px;
   border: none;
-  outline: none;
 }
 
-/* ===== TABLE (ADMIN) ===== */
+/* ===== ADMIN TABLE ===== */
 table {
   margin: 40px auto;
   background: rgba(255,255,255,0.12);
