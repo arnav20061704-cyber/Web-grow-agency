@@ -1,66 +1,188 @@
-/* ===== ULTRA BACKGROUND ===== */
-body {
-  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364, #141e30);
-  background-size: 400% 400%;
-  animation: bgMove 12s ease infinite;
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Arial, sans-serif;
 }
 
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ===== BODY ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
 }
-.card {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+/* ===== LOADER ===== */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #0f2027;
+  z-index: 9999;
+  animation: fadeOut 2s forwards;
+}
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ===== NAVBAR ===== */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00f260;
+}
+
+.offer {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.nav-btn {
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  padding: 10px 22px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #00f260, #0575e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  margin: 20px 0 40px;
+  font-size: 1.2rem;
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #00f260, #0575e6);
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
 }
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== PRICING ===== */
+.pricing {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.offer-text {
+  color: #ffd700;
+  margin-top: 10px;
+}
+
+/* ===== PRICING CARDS ===== */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  padding: 40px 25px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
 .card:hover {
-  transform: translateY(-18px) scale(1.05);
-  box-shadow: 0 30px 60px rgba(0,242,96,0.5);
-}
-.card:active {
-  transform: scale(0.94) rotateX(8deg);
-  box-shadow: 0 10px 25px rgba(0,242,96,0.8);
+  transform: translateY(-10px);
 }
 
-/* Ripple Effect */
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,242,96,0.4) 10%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.4s;
+.card h3,
+.card h4,
+.card h5 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #00f260;
 }
 
-.card:active::after {
-  opacity: 1;
+.card ul {
+  list-style: none;
+  margin: 25px 0;
 }
+
+.card ul li {
+  margin: 10px 0;
+}
+
+/* ===== FEATURED ===== */
 .featured {
+  border: 2px solid #00f260;
+}
+
+/* ===== IMPORTANT CLICK FIX ===== */
+.card a {
+  display: block;
+  margin-top: 15px;
+}
+
+/* ===== FORM ===== */
+form {
+  max-width: 420px;
+  margin: 70px auto;
+  background: rgba(255,255,255,0.15);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
   border: none;
-  animation: neonPulse 2s infinite alternate;
 }
 
-@keyframes neonPulse {
-  from {
-    box-shadow: 0 0 20px #00f260;
-  }
-  to {
-    box-shadow: 0 0 45px #0575e6;
-  }
-}
-button,
-.nav-btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* ===== TABLE (ADMIN) ===== */
+table {
+  width: 90%;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.15);
+  border-collapse: collapse;
 }
 
-button:active,
-.nav-btn:active {
-  transform: scale(0.9);
-  box-shadow: 0 0 30px rgba(0,242,96,0.8);
+th, td {
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
 }
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.85;
+}  
