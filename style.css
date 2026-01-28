@@ -1,132 +1,66 @@
-/* ================= ANIMATIONS ================= */
-
-/* ===== GLOBAL SMOOTH ===== */
-html {
-  scroll-behavior: smooth;
+/* ===== ULTRA BACKGROUND ===== */
+body {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364, #141e30);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
 }
 
-/* ===== NAVBAR ANIMATION ===== */
-.top-nav {
-  animation: slideDown 0.9s ease-out;
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-18px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,242,96,0.5);
+}
+.card:active {
+  transform: scale(0.94) rotateX(8deg);
+  box-shadow: 0 10px 25px rgba(0,242,96,0.8);
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ===== HERO TEXT ANIMATION ===== */
-.hero-title {
-  animation: fadeUp 1.2s ease-out;
-}
-
-.hero-subtitle {
-  animation: fadeUp 1.4s ease-out;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== BUTTON PULSE EFFECT ===== */
-button,
-.nav-btn {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover,
-.nav-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0,242,96,0.6);
-}
-
-/* ===== BUTTON RIPPLE ===== */
-button::after,
-.nav-btn::after {
+/* Ripple Effect */
+.card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.2);
+  background: radial-gradient(circle, rgba(0,242,96,0.4) 10%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
 }
 
-button:hover::after,
-.nav-btn:hover::after {
+.card:active::after {
   opacity: 1;
 }
-
-/* ===== PRICING SECTION ANIMATION ===== */
-.pricing {
-  animation: fadeIn 1.2s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ===== CARD FLOAT ANIMATION ===== */
-.card {
-  animation: floatCard 4s ease-in-out infinite;
-}
-
-.card:nth-child(2) {
-  animation-delay: 0.5s;
-}
-.card:nth-child(3) {
-  animation-delay: 1s;
-}
-
-@keyframes floatCard {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* ===== FEATURED CARD GLOW ===== */
 .featured {
-  animation: glow 2.5s infinite alternate;
+  border: none;
+  animation: neonPulse 2s infinite alternate;
 }
 
-@keyframes glow {
+@keyframes neonPulse {
   from {
-    box-shadow: 0 0 10px rgba(0,242,96,0.4);
+    box-shadow: 0 0 20px #00f260;
   }
   to {
-    box-shadow: 0 0 30px rgba(0,242,96,0.9);
+    box-shadow: 0 0 45px #0575e6;
   }
 }
-
-/* ===== FORM INPUT FOCUS ===== */
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 10px #00f260;
-  transform: scale(1.02);
-  transition: 0.3s;
+button,
+.nav-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ===== FOOTER FADE ===== */
-footer {
-  animation: fadeIn 2s ease-in;
+button:active,
+.nav-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 30px rgba(0,242,96,0.8);
 }
