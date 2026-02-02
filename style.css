@@ -215,14 +215,6 @@ footer {
   opacity: 0.9;
 }
 
-.refer-poster {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-  margin-bottom: 30px;
-}
-
 .refer-btn {
   display: inline-block;
   padding: 14px 30px;
@@ -239,5 +231,6 @@ footer {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
 }
+
 
 
