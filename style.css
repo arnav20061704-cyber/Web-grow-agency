@@ -196,3 +196,48 @@ footer {
   padding: 25px;
   opacity: 0.85;
 }
+/* ===== REFER & EARN SECTION ===== */
+.refer-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.refer-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.refer-section p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.refer-poster {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+}
+
+.refer-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.refer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+}
+
+
